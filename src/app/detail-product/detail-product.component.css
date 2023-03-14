@@ -1,0 +1,16 @@
+.img-resize{
+    width: 100%;
+    height: 20rem;
+    padding-top: 25px;
+    padding-right: 5%;
+    object-fit: cover;
+}
+
+.accenture-btn-color{
+    background-color: #a100ff;
+    color: white;
+}
+
+.description{
+    margin-top: 25px;
+}

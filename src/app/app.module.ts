@@ -20,7 +20,9 @@ const icons = {
 
 const routes: Routes = [
   { path: 'product', component: ProductComponent },
-  { path: 'detail-product/:id', component: DetailProductComponent},
+  { path: 'details', component: DetailProductComponent},
+  { path: 'cart', component: CartComponent},
+  { path: 'checkout', component: CheckoutComponent},
   { path: '', redirectTo: 'product', pathMatch: 'full'}
 ];
 

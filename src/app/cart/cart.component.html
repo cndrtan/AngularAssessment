@@ -1,1 +1,42 @@
-<p>cart works!</p>
+<app-navbar></app-navbar>
+
+<div class="container">
+    <table class="table" style="margin-top: 25px;">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">QTY</th>
+                <th scope="col">Total</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>
+                    <button class="btn btn-warning">Edit</button>
+                    <button class="btn btn-danger" style="margin-left: 3px;">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="4">Total</th>
+                <td colspan="2">XXX</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <button class="btn accenture-btn-color float-end" style="margin-bottom: 25px;">Checkout</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

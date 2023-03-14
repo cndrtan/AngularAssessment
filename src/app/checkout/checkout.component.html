@@ -1,1 +1,59 @@
-<p>checkout works!</p>
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form style="margin-top: 25px;">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="number" class="form-control" id="phone" placeholder="Enter phone">
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea class="form-control" id="address" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn accenture-btn-color float-end">Checkout</button>
+              </form>
+        </div>
+
+
+        <!-- ORDER SUMMARY -->
+        <div class="col-6">
+            <div style="margin: 25px;">
+                <h5>Order Summary</h5>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>#</td>
+                            <td>Product Name</td>
+                            <td>Qty</td>
+                            <td>Total</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>XXX</td>
+                            <td>2</td>
+                            <td>000</td>
+                        </tr>
+                        <tr>
+                            <th colspan="3">Total</th>
+                            <td>000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

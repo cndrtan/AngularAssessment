@@ -1,0 +1,17 @@
+.list-group-item > .badge{
+    float: right;
+    color: black;
+}
+
+.card-padding{
+    padding: 5px;
+}
+
+.column {
+    float: left;
+    padding: 0 10px;
+}
+
+.row {
+    margin: 0 -5px;
+}
