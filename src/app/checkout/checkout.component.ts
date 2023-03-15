@@ -2,6 +2,7 @@ import { registerLocaleData } from '@angular/common';
 import es from '@angular/common/locales/es';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Order } from '../model/order.model';
 
 @Component({
@@ -11,6 +12,8 @@ import { Order } from '../model/order.model';
 })
 export class CheckoutComponent implements OnInit {
   
+  constructor(private router: Router){}
+
   dataOrder: Order[] = []
   totalOrder: number = 0
 
@@ -55,6 +58,7 @@ export class CheckoutComponent implements OnInit {
   onSubmit(){
     sessionStorage.clear()
     alert("Thank you for your order!")
+    this.router.navigate(['product']);
   }
 
 }

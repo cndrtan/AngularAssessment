@@ -72,5 +72,6 @@ export class ProductComponent implements OnInit{
       this.dataOrder.push(order)
     } 
     sessionStorage.setItem('order', JSON.stringify(this.dataOrder))
+    alert('The order has been added to cart.')
   }
 }

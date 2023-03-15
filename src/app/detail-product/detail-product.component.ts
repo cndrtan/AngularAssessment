@@ -54,6 +54,7 @@ export class DetailProductComponent implements OnInit{
       this.dataOrder.push(order)
     } 
     sessionStorage.setItem('order', JSON.stringify(this.dataOrder))
+    this.router.navigate(['cart']);
   }
 
 }
