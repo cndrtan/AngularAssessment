@@ -1,17 +1,8 @@
 <div class="card">
     <div class="card-header">Filter</div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item list-group-item-action">Shirts
-            <span class="badge badge-primary badge-pill">2</span>
-        </li>
-        <li class="list-group-item list-group-item-action">Shoes
-            <span class="badge badge-primary badge-pill">2</span>
-        </li>
-        <li class="list-group-item list-group-item-action">Pants
-            <span class="badge badge-primary badge-pill">2</span>
-        </li>
-        <li class="list-group-item list-group-item-action">Jackets
-            <span class="badge badge-primary badge-pill">2</span>
+    <ul class="list-group list-group-flush" *ngFor="let item of categoryList">
+        <li class="list-group-item list-group-item-action" (click)="clickFilter(item.name!)">{{item.name}}
+            <span class="badge badge-primary badge-pill">{{ getFilterValue(item.name!) }}</span>
         </li>
     </ul>
 </div>

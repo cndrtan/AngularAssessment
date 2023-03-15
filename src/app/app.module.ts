@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxBootstrapIconsModule, cart } from 'ngx-bootstrap-icons';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -20,7 +22,7 @@ const icons = {
 
 const routes: Routes = [
   { path: 'product', component: ProductComponent },
-  { path: 'details', component: DetailProductComponent},
+  { path: 'details/:id', component: DetailProductComponent},
   { path: 'cart', component: CartComponent},
   { path: 'checkout', component: CheckoutComponent},
   { path: '', redirectTo: 'product', pathMatch: 'full'}
@@ -42,7 +44,10 @@ const routes: Routes = [
     BrowserModule,
     NgbModule,
     RouterModule.forRoot(routes),
-    NgxBootstrapIconsModule.pick(icons)
+    NgxBootstrapIconsModule.pick(icons),
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,16 +3,16 @@
 <div class="container">
     <div class="row">
         <div class="col-4">
-            <img class="img-resize" src="https://media.istockphoto.com/id/842096404/id/vektor/kaos-01.jpg?s=1024x1024&w=is&k=20&c=bVNU9EyHXH2lXJdTnTQQw5c466lNLzcIOy8hbbnTQVY=" alt="shoes">
+            <img class="img-resize" src="{{product?.image}}" alt="shoes">
         </div>
         <div class="col-8 description">
-            <h3>Product Title</h3>
-            <p>Categories</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris semper arcu et urna venenatis, sit amet molestie felis vulputate. Donec scelerisque metus purus, ac efficitur ante tincidunt fermentum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus rhoncus arcu tristique, pulvinar metus at, posuere diam. Mauris vel bibendum.</p>
-            <p>Rating</p>
+            <h3>{{product?.name}}</h3>
+            <p>{{product?.category}}</p>
+            <p>{{product?.description}}</p>
+            <p>Rating: {{product?.rating}}</p>
             <div class="float-end">
-                <p class="text-center">Price</p>
-                <button class="btn accenture-btn-color"> Add to cart</button>
+                <p class="text-center">Rp {{ product?.price | number:'':'es' }},00</p>
+                <button class="btn accenture-btn-color" (click)="addToCart()"> Add to cart</button>
             </div>
         </div>
     </div>

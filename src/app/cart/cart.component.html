@@ -13,27 +13,33 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
+            <tr *ngFor="let item of dataOrder;let i=index;">
+                <th scope="row">{{ i+1 }}</th>
+                <td>{{ item.name }}</td>
+                <td>{{ item.price | number:'':'es' }}</td>
                 <td>
-                    <button class="btn btn-warning">Edit</button>
-                    <button class="btn btn-danger" style="margin-left: 3px;">Delete</button>
+                    <div class="btn-group" role="group">
+                        <button class="btn btn-light" (click)="decrementQty(item)">-</button>
+                        <button class="btn btn-light" >{{ item.quantity }}</button>
+                        <button class="btn btn-light" (click)="incrementQty(item)">+</button>
+                    </div>
+                </td>
+                <td>{{ (item.price! * item.quantity!) | number:'':'es' }}</td>
+                <td>
+                    <button class="btn btn-warning" (click)="totalOrderFunc()">Edit</button>
+                    <button class="btn btn-danger" style="margin-left: 3px;" (click)="deleteOrder(item)">Delete</button>
                 </td>
             </tr>
             <tr>
                 <th colspan="4">Total</th>
-                <td colspan="2">XXX</td>
+                <td colspan="2">{{totalOrder | number:'':'es'}}</td>
             </tr>
         </tbody>
     </table>
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <button class="btn accenture-btn-color float-end" style="margin-bottom: 25px;">Checkout</button>
+                <button class="btn accenture-btn-color float-end" style="margin-bottom: 25px;" (click)="checkoutClick()">Checkout</button>
             </div>
         </div>
     </div>

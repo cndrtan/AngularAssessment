@@ -3,24 +3,24 @@
 <div class="container">
     <div class="row">
         <div class="col-6">
-            <form style="margin-top: 25px;">
+            <form style="margin-top: 25px;" [formGroup]= "reactForm" (ngSubmit)="onSubmit()">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter name">
+                    <input type="text" class="form-control" id="name" placeholder="Enter name" formControlName="name" [ngClass]= "getNameValue && getNameValue.invalid && getNameValue.touched ? 'is-invalid' : getNameValue?.valid ? 'is-valid' : '' ">
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email">
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" formControlName="email" [ngClass]= "getEmailValue && getEmailValue.invalid && getEmailValue.touched ? 'is-invalid' : getEmailValue?.valid ? 'is-valid' : '' ">
                 </div>
                 <div class="form-group">
                     <label for="phone">Phone</label>
-                    <input type="number" class="form-control" id="phone" placeholder="Enter phone">
+                    <input type="text" class="form-control" id="phone" placeholder="Enter phone" formControlName="phone" [ngClass]= "getPhoneValue && getPhoneValue.invalid && getPhoneValue.touched ? 'is-invalid' : getPhoneValue?.valid ? 'is-valid' : '' ">
                 </div>
                 <div class="form-group">
                     <label for="address">Address</label>
-                    <textarea class="form-control" id="address" rows="3"></textarea>
+                    <textarea class="form-control" id="address" rows="3" formControlName="address" [ngClass]= "getAddressValue && getAddressValue.invalid && getAddressValue.touched ? 'is-invalid' : getAddressValue?.valid ? 'is-valid' : '' "></textarea>
                 </div>
-                <button type="submit" class="btn accenture-btn-color float-end">Checkout</button>
+                <button type="submit" class="btn accenture-btn-color float-end" [disabled] = "reactForm.invalid">Checkout</button>
               </form>
         </div>
 
@@ -39,15 +39,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>XXX</td>
-                            <td>2</td>
-                            <td>000</td>
+                        <tr *ngFor="let item of dataOrder;let i=index;">
+                            <td>{{ i+1 }}</td>
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>{{ (item.quantity! * item.price!) | number:'':'es' }}</td>
                         </tr>
                         <tr>
                             <th colspan="3">Total</th>
-                            <td>000</td>
+                            <td>{{ totalOrder | number:'':'es' }}</td>
                         </tr>
                     </tbody>
                 </table>
